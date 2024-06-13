@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Minha página de teste</title>
+  </head>
+  <body>
+
+  <!-- Codigo inline  -->
+    <script>
+        (function () {
+            let s = !1,
+                e,
+                n;
+            document.readyState !== "loading" ? o() : addEventListener("DOMContentLoaded", o), (e = document.querySelector("#ThemeToggle")), (s = !e);
+            function t(n) {
+                try {
+                    let o = n ? "dark" : "light";
+                    document.documentElement.setAttribute("theme", o),
+                        document.documentElement.setAttribute("data-theme", o),
+                        (localStorage.theme = JSON.stringify({ theme: o })),
+                        e ? ((e.checked = n), (s = !1)) : s && setTimeout(t, 1, n);
+                } catch {}
+                n ? (document.getElementById("ThemeToggle--tooltip").textContent = "Set light (⇧+D)") : (document.getElementById("ThemeToggle--tooltip").textContent = "Set Dark (⇧+D)");
+            }
+            function o() {
+                (e = e || document.querySelector("#ThemeToggle")),
+                    e.addEventListener("change", () => t(!!e.checked)),
+                    addEventListener("keydown", (n) => {
+                        n.target !== document.body || n.repeat || (n.which === 68 && n.shiftKey && (n.preventDefault(), t(!e.checked)));
+                    });
+            }
+            try {
+                (n = window.matchMedia("(prefers-color-scheme:dark)")), (n.onchange = (e) => t(e.matches));
+            } catch {}
+            try {
+                let e = localStorage.theme,
+                    s = e && JSON.parse(e);
+                t(s ? /dark/.test(s.theme) : !!(n && n.matches));
+            } catch {}
+        })();
+    </script>
+
+      <!-- Codigo inline  -->
+
+
+      <!-- toggle inline  -->
+
+        <div class="DocsToolbar--theme-toggle">
+
+            <div class="Tooltip---root">
+                <div class="ThemeToggle"><input type="checkbox" id="ThemeToggle" class="ThemeToggle--input">
+                    <label class="ThemeToggle--toggle" for="ThemeToggle">
+                        <div class="ThemeToggle--toggle-handle"></div>
+                        <div class="ThemeToggle--toggle-handle-icon ThemeToggle--sun"><svg viewBox="0 0 16 16" fill="currentcolor" role="img" aria-labelledby="title-8812071124069258" xmlns="http://www.w3.org/2000/svg">
+                                <title id="title-8812071124069258">Light theme icon (depiction of a sun)</title>
+                                <path d="M7.5 11.465a3.482 3.482.0 01-1.596-.662L4.11 12.596a.5.5.0 01-.707-.707l1.793-1.793A3.482 3.482.0 014.535 8.5H2a.5.5.0 010-1h2.535a3.482 3.482.0 01.662-1.596L3.404 4.11a.5.5.0 01.707-.707l1.793 1.793A3.482 3.482.0 017.5 4.535V2a.5.5.0 011 0v2.535a3.482 3.482.0 011.596.662l1.793-1.793a.5.5.0 01.707.707l-1.793 1.793c.343.458.577 1.003.662 1.596H14a.5.5.0 110 1h-2.535a3.482 3.482.0 01-.662 1.596l1.793 1.793a.5.5.0 01-.707.707l-1.793-1.793a3.482 3.482.0 01-1.596.662V14a.5.5.0 11-1 0v-2.535z">
+                                </path>
+                            </svg></div>
+                        <div class="ThemeToggle--toggle-handle-icon ThemeToggle--moon"><svg viewBox="0 0 16 16" fill="currentcolor" role="img" aria-labelledby="title-5971296394189265" xmlns="http://www.w3.org/2000/svg">
+                                <title id="title-5971296394189265">Dark theme icon (depiction of a moon)</title>
+                                <path d="M7.067 3.087a5 5 0 005.466 7.026A5 5 0 117.067 3.087z"></path>
+                            </svg></div>
+                    </label><span class="Tooltip" id="ThemeToggle--tooltip" role="tooltip" position="bottom-end">Set theme to dark (⇧+D)</span>
+                </div>
+            </div>
+        </div>
+
+    <!-- toggle inline  -->
+
+    <!-- Adicione esse codigo em suas paginas html em inline -->
+    
+    <img src="images/firefox-icon.png" alt="minha página de teste" />
+  </body>
+</html>
