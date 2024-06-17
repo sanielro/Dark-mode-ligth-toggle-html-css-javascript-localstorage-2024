@@ -1,4 +1,5 @@
-# Dark-mode-ligth-toggle-html-css-javascript-localstorage-2024
+<img src="https://github.com/sanielro/Dark-mode-ligth-toggle-html-css-javascript-localstorage-2024/blob/c547977695508f291ed0c74ffc71b9bdea6aa2e3/Screenshot%202024-06-17%20a%5B...%5D.png">
+
 Dark mode ligth toggle html css javascript localstorage 2024
 
 1 - Adicione esse codigo em suas paginas html em inline 
